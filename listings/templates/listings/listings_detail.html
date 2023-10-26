@@ -1,0 +1,14 @@
+{%extends 'listings/base.html'%}
+{%block content%}
+<h2>{{listings.title}}</h2>
+<p>Description: {{listings.description}}</P>
+    <ul>
+        <li>deja vendu : {{listings.sold|yesno}}</li>
+        <li> Annee : {{listings.year}}</li>
+        <li> type : {{listings.type}}</li>
+        <li> </Li>
+    </ul>
+    <p><a href="{%url 'listings-update' listings.id%}">[Editer]</a></P>
+    <p><a href="{%url 'listings-delete' listings.id%}">[supprimer]</a></P>
+    Retour aux <a href="{%url 'listings-list'%}">annonces</a>
+{%endblock%}

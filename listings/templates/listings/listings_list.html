@@ -1,0 +1,13 @@
+{%extends 'listings/base.html'%}
+{%block content%}
+         <h1>Mes annonces </h1>
+         <ol>
+            {%for ann in annonces%}
+            <li> <a href="{% url 'listings-detail' ann.id %}">{{ann.title}}</a>
+            -<a href="{%url 'listings-update' ann.id%}">[Editer]</a>
+            -<a href="{%url 'listings-delete' ann.id%}">[supprimer]</a>
+            </li>
+            {%endfor%}
+         </ol>
+         <a href="{%url 'listings-create'%}">creer une nouvelle annonce</a>
+         {%endblock%}

@@ -1,0 +1,10 @@
+{% extends "listings/base.html" %}
+{% block content %}
+<h1>{{listing.title}}</h1>
+<p>Etes vous sur de vouloir supprimer ?</p>
+<nav>
+    <form action="" method="POST">
+        {%csrf_token%}
+        <input type="submit" value="Valider">
+{% endblock content %}
+
